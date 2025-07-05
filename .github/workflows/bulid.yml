@@ -82,7 +82,7 @@ jobs:
             -Dvulkan-drivers= \
             -Dtools=drm-shim \
             -Dgallium-drivers=zink \
-            -Dfreedreno-kmd=kgsl,msm \
+            -Dfreedreno-kmds=kgsl,msm \
             -Dbuildtype=release
           ninja -C "build-android" install
           mkdir /tmp/mesa/output
