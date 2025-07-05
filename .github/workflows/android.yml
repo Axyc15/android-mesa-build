@@ -64,7 +64,7 @@ jobs:
           cd ..
           envsubst <android-${{matrix.arch}}>build-crossfile
           cd mesa
-          sed -i 's/with_vdrm/with_freedreno_kmds/g' src/meson.build
+          sed -i 's/with_vdrm/with_freedreno_kmd/g' src/meson.build
           meson setup "build-android" \
             --prefix=/tmp/mesa \
             --cross-file "../build-crossfile" \
@@ -83,7 +83,7 @@ jobs:
             -Dvulkan-drivers= \
             -Dtools=drm-shim \
             -Dgallium-drivers=zink,freedreno \
-            -Dfreedreno-kmds=kgsl,msm \
+            -Dfreedreno-kmd=kgsl,msm \
             -Dbuildtype=release
           ninja -C "build-android" install
           mkdir /tmp/mesa/output
